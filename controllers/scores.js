@@ -24,7 +24,21 @@ const modeIndex = async (req, res) => {
   }
 }
 
+const userIndex = async (req, res) => {
+  try {
+    const scores = await Score.findAll({
+      where: {
+        profileId: req.params.userId
+      }
+    })
+    res.status(200).json(scores)
+  } catch (error) {
+    res.status(500).json(error)
+  }
+}
+
 module.exports = {
   create,
   modeIndex,
+  userIndex
 }
