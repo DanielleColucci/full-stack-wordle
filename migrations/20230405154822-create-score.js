@@ -22,7 +22,7 @@ module.exports = {
         }
       },
       profileId: {
-        types: Sequelize.INTEGER,
+        type: Sequelize.INTEGER,
         allowNull: false,
         onDelete: 'CASCADE',
         references: {

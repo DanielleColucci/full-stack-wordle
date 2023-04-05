@@ -27,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
       }
     },
     profileId: {
-      types: DataTypes.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: false,
       onDelete: 'CASCADE',
       references: {
