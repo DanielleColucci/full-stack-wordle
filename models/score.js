@@ -15,8 +15,12 @@ module.exports = (sequelize, DataTypes) => {
   }
   Score.init({
     mode: {
-      type: DataTypes.ENUM(1, 2, 4, 8, 16),
-      defaultValue: 1,
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        min: 1,
+        max: 16
+      }
     },
     value: {
       type: DataTypes.INTEGER,

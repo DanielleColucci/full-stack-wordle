@@ -10,8 +10,12 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       mode: {
-        type: Sequelize.ENUM(1, 2, 4, 8, 16),
-        defaultValue: 1,
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        validate: {
+          min: 1,
+          max: 16
+        }
       },
       value: {
         type: Sequelize.INTEGER,
