@@ -10,13 +10,25 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       mode: {
-        type: Sequelize.INTEGER
+        type: Sequelize.ENUM(1, 2, 4, 8, 16),
+        defaultValue: 1,
       },
       value: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        validate: {
+          min: 1,
+          max: 6,
+        }
       },
       profileId: {
-        type: Sequelize.INTEGER
+        types: Sequelize.INTEGER,
+        allowNull: false,
+        onDelete: 'CASCADE',
+        references: {
+          model: 'Profiles',
+          key: 'id',
+        }
       },
       createdAt: {
         allowNull: false,
