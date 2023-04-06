@@ -16,6 +16,10 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Score.init({
+    win: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false
+    },
     mode: {
       type: DataTypes.INTEGER,
       allowNull: false,
