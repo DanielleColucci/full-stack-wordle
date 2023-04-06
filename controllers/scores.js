@@ -24,7 +24,7 @@ const modeIndex = async (req, res) => {
   }
 }
 
-const userIndex = async (req, res) => {
+const index = async (req, res) => {
   try {
     const scores = await Score.findAll({
       where: {
@@ -40,5 +40,5 @@ const userIndex = async (req, res) => {
 module.exports = {
   create,
   modeIndex,
-  userIndex
+  index
 }
