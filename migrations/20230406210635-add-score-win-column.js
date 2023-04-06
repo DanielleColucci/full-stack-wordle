@@ -4,8 +4,7 @@
 module.exports = {
   async up (queryInterface, Sequelize) {
     await queryInterface.addColumn('Scores', 'win', { 
-      type: Sequelize.BOOLEAN,
-      allowNull: false,
+      type: Sequelize.BOOLEAN
     })
   },
 
