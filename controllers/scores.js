@@ -14,7 +14,7 @@ const modeIndex = async (req, res) => {
   try {
     const scores = await Score.findAll({
       where: {
-        profileId: req.user.profile.id,
+        profileId: req.params.userId,
         mode: req.params.mode
       }
     })
